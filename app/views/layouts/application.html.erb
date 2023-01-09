@@ -4,12 +4,63 @@
     <title>Task2App</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  
   <body>
+    <header>
+      
+      <div class = "header-container">
+        
+        <%= link_to image_tag("logo.png"), "/", class: "top-image" %>
+          
+        <div class = "search-container">
+          <%= form_with url: search_path, method: :get, local: true, class: "search_form" do |f| %>
+            <%= f.text_field :freeword, value: @freeword, placeholder: "フリーワード" %>
+          <% end %>
+        </div>
+        
+        <% if user_signed_in? %>
+          <div class = "accordion-container">
+            <div class = "accordion-title">
+              <%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpeg", class: "no_image" %><br>
+            </div>
+            <div class = "accordion-content">
+              <div class = "accordion-list">
+                <%= link_to "アカウント設定", edit_user_path(current_user), class: "accordion_link" %>
+                <%= link_to "ルーム登録", new_room_path, class: "accordion_link" %>
+                <%= link_to "予約済みルーム一覧", room_reservations_path(current_user), class: "accordion_link" %>
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "accordion_link" %>
+              </div>
+            </div>
+          </div>
+        <% else %>
+          <%= link_to "ログイン", new_user_session_path, class: "header_form login" %>
+          <%= link_to "新規登録", new_user_registration_path, class: "header_form signup" %>
+        <% end %>
+      </div>
+      
+      <% if flash[:notice] %>
+        <div class = "notification is-info">
+          <p class="notice"><%= notice %></p>
+        </div>
+      <% end %>
+      
+      <% if flash[:alert] %>
+        <div class = "notification is-danger">
+          <p class="alert"><%= alert %></p>
+        </div>
+      <% end %>
+      
+    </header>
+    
     <%= yield %>
+    
+    <footer>
+      <p class = "footer-message">© 2023 POTEPAN.INC.</p>
+    </footer>
+    
   </body>
 </html>

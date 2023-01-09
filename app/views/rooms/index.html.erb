@@ -1,0 +1,16 @@
+<div class = "rooms-top-container">
+    
+    <% @rooms.each do |room| %>
+        <div class = "rooms-container">
+            <ul>
+                <%= link_to(room_path(room.id)) do %>
+                    <li class = "list"><%= attachment_image_tag room, :image, fallback: "area_no_image.png" %></li>
+                    <li class = "list"><%= room.room_name %></li>
+                <% end %>
+                <li class = "list"><%= room.address %></li>
+                <li class = "list"><%= room.body %></li>
+            </ul>
+        </div>
+    <% end %>
+
+</div>

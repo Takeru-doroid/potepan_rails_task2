@@ -1,0 +1,21 @@
+<h2>ユーザー詳細</h2>
+
+<table>
+    <tr>
+        <td><%= @user.username %></td>
+    </tr>
+    <% if @user.id == current_user.id %>
+        <tr>
+            <td><%= @user.email %></td>
+        </tr>
+    <% end %>
+    <tr>
+        <td><%= @user.profile %></td>
+    </tr>
+    <% if @user.id == current_user.id %>
+        <%= link_to "編集", edit_user_path(@user) %>
+        <%= link_to "ルーム登録", new_room_path %>
+    <% end %>
+</table>
+
+<%= link_to "一覧にもどる", users_path %>

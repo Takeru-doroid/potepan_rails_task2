@@ -1,0 +1,19 @@
+
+<div class = "main">
+    <div class = "top-search_form">
+        <%= form_with url: search_path, method: :get, local: true, class: "search_form search_form-top-page" do |f| %>
+            <%= f.text_field :freeword, value: @freeword, placeholder: "部屋名、住所、フリーワード", class: "top-search_form-keyword" %>
+            <div class = "top-search-submit"><%= f.submit "検索" %></div>
+        <% end %>
+    </div>
+</div>
+
+<div class = "contents">
+    <h3>おすすめエリア</h3>
+    <div class = "contents-container">
+        <div class = "item-container"><%= image_tag 'img_kyoto.jpeg', class: 'content_item' %></div>
+        <div class = "item-container"><%= image_tag 'img_osaka.jpeg', class: 'content_item' %></div>
+        <div class = "item-container"><%= image_tag 'img_sapporo.jpeg', class: 'content_item' %></div>
+        <div class = "item-container"><%= image_tag 'img_tokyo.jpeg', class: 'content_item' %></div>
+    </div>
+</div>
