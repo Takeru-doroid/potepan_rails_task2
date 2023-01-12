@@ -1,0 +1,133 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* room#index-------------------------- */
+
+.rooms-top-container{
+    width: 90%;
+    margin: auto;
+}
+
+.rooms-container{
+    display: flex;
+    flex-wrap: wrap;
+    display: inline-block;
+    width: 24%;
+}
+
+.rooms-container ul{
+    border: 1px solid #DDDDDD;
+    margin: 5px 5px 20px 5px;
+    padding: 15px;
+    background-color: #DDFFFF;
+    text-align: center;
+}
+
+.list{
+    padding-bottom: 2px;
+}
+
+
+/* room#index-------------------------- */
+
+/* room#new-------------------------- */
+
+.new_room_reservate_page{
+    padding: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #EEEEEE;
+}
+
+.new_room_reservate_table{
+    margin: 0;
+    width: 100%;
+}
+
+.reservate_row{
+    width: 100%;
+    border-top: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+    margin: 30px 0px 30px 0px;
+    padding: 10px 0px 20px 0px;
+    display: flex;
+}
+
+.reservate_row th{
+    justify-content: flex-start;
+    width: 200px;
+}
+
+.reservate_row td{
+    width: 100%;
+}
+
+.reservate_row textarea{
+    height: 168px;
+}
+
+.reservate_label{
+    width: 70%;
+    margin: 5px 0px 5px 5px;
+    display: inline-block;
+    text-align: left;
+}
+
+.reservate_field{
+    width: 100%;
+    display: block;
+}
+
+.reservate-row td{
+    width: 100%
+}
+
+/* room#new-------------------------- */
+
+/* room#show-------------------------- */
+.room-show-container{
+    padding-bottom: 36px;
+    display: flex;
+    margin: 10px;
+}
+
+.room-show-info{
+    width: 75%;
+    padding: 10px;
+}
+
+.room_name-show{
+    font-weight: bold;
+}
+
+.room-show-reservate{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #EEEEEE;
+    padding: 10px;
+}
+
+.room-show-row{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 10px 0px;
+}
+
+.room-reserve-btn{
+    margin-top: 15px;
+    width: 70%;
+    height: 40px;
+    border: none;
+    background-color: #75A9FF;
+    border-radius: 10px;
+    color: white;
+}
+
+.room-reserve-btn:hover{
+    color: black;
+}
+
+/* room#show-------------------------- */

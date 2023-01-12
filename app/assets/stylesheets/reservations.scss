@@ -1,0 +1,31 @@
+// Place all the styles related to the reservations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* reservations_index-------------------------- */
+
+.reservation_index_table{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.reserve-index-row{
+    width: 100%;
+}
+
+.reserve-title{
+    font-family: bold;
+    font-size: 20px;
+}
+
+.reserved-list{
+    padding: 5px 0px;
+    margin: 5px 0px;
+    border-top: 2px solid gray;
+}
+
+
+/* reservations_index-------------------------- */
+

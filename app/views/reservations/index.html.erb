@@ -1,0 +1,28 @@
+
+<div class = "container">
+    
+    <div class = "reservation_index_table">
+        <div class = "reserve-index-row">
+            <div class = "reserve-title">チェックイン日時</div>
+            <% @myreservations.each do |myreservation| %>
+            <div class = "reserved-list"><%= myreservation.start_date %></div>
+            <% end %>
+        </div>
+        
+        <div class = "reserve-index-row">
+            <div class = "reserve-title">チェックアウト日時</div>
+            <% @myreservations.each do |myreservation| %>
+            <div class = "reserved-list"><%= myreservation.end_date %></div>
+            <% end %>
+        </div>
+        
+        <div class = "reserve-index-row">
+            <div class = "reserve-title">部屋名</div>
+            <% @myreservations.each do |myreservation| %>
+            <div class = "reserved-list"><%= myreservation.room.room_name %></div>
+            <% end %>
+        </div>
+    </div>
+    
+</div>
+

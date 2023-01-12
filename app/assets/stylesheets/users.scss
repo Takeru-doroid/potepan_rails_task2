@@ -1,0 +1,35 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* user#edit-------------------------- */
+.edit_user_page{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.edit_user_form_row{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    width: 80%;
+}
+
+.edit_user_label{
+    width: 20%;
+}
+
+.edit_user_form{
+    width: 50%;
+    height: 40px;
+}
+
+.profile_form{
+    height: 80px;
+}
+
+/* user#edit-------------------------- */
+
+

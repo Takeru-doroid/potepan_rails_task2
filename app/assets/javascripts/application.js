@@ -10,7 +10,22 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
+//= require jquery
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+// !!追記!! application.html.erb header部分のアコーディオンメニュー
+/*global $*/
+ $(document).on('turbolinks:load' , function() {
+    $(function() {
+        $('.accordion-title').on('click' , function() {
+            
+            $(this).next().slideToggle(200);
+            
+            $(this).toggleClass('open' , 200);
+        });
+    });
+ });
