@@ -31,6 +31,7 @@
               <div class = "accordion-list">
                 <%= link_to "アカウント設定", edit_user_path(current_user), class: "accordion_link" %>
                 <%= link_to "ルーム登録", new_room_path, class: "accordion_link" %>
+                <%= link_to "登録ルーム一覧", myrooms_rooms_path(current_user), class: "accordion_link" %>
                 <%= link_to "予約済みルーム一覧", room_reservations_path(current_user), class: "accordion_link" %>
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "accordion_link" %>
               </div>

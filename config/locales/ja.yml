@@ -205,3 +205,14 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+    
+  user:
+    username: "ユーザー名"
+    email: "メールアドレス"
+    
+    
+  reservation:
+    start_date: "開始日"
+    end_date: "終了日"
+    person: "人数"
+    

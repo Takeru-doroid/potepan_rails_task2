@@ -1,6 +1,6 @@
 <div class = "room-show-container container">
     <div class = "room-show-info">
-        <div class = "room_image-show"><%= attachment_image_tag @room, :image, size: "988x737", fallback: "area_no_image.png" %></div>
+        <div class = "room_image_show"><%= attachment_image_tag @room, :image, size: "988x737", fallback: "area_no_image.png" %></div>
         <div class = "room_name-show"><%= @room.room_name %></div>
         <div class = "address-show"><%= @room.address %></div>
         <div class = "body-show"><%= @room.body %></div>
@@ -11,7 +11,7 @@
             <%= @room.price %>
             <span>/ 日</span>
         </div>
-        <%= form_with(model:[@room, @room.reservations.new]) do |f| %>
+        <%= form_with(model:[@room, @room.reservations.new], url: room_confirm_path(@room), local: true) do |f| %>
             <%= f.hidden_field :room_id, value: @room.id %>
             
             <div class = "room-show-row">

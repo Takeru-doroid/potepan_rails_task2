@@ -11,9 +11,31 @@
 <div class = "contents">
     <h3>おすすめエリア</h3>
     <div class = "contents-container">
-        <div class = "item-container"><%= image_tag 'img_kyoto.jpeg', class: 'content_item' %></div>
-        <div class = "item-container"><%= image_tag 'img_osaka.jpeg', class: 'content_item' %></div>
-        <div class = "item-container"><%= image_tag 'img_sapporo.jpeg', class: 'content_item' %></div>
-        <div class = "item-container"><%= image_tag 'img_tokyo.jpeg', class: 'content_item' %></div>
+        <div class = "item-container">
+            <%= link_to(search_path(:freeword => "京都")) do %>
+                <div><%= image_tag 'img_kyoto.jpeg', class: 'content_item' %></div>
+                <div class = "content_name">--------京都--------</div>
+            <% end %>
+        </div>
+        <div class = "item-container">
+            <%= link_to(search_path(:freeword => "大阪")) do %>
+                <div><%= image_tag 'img_osaka.jpeg', class: 'content_item' %></div>
+                <div class = "content_name">--------大阪--------</div>
+            <% end %>
+        </div>
+        <div class = "item-container">
+            <%= link_to(search_path(:freeword => "札幌")) do %>
+                <div><%= image_tag 'img_sapporo.jpeg', class: 'content_item' %></div>
+                <div class = "content_name">--------札幌--------</div>
+            <% end %>
+            </div>
+        <div class = "item-container">
+            <%= link_to(search_path(:freeword => "東京")) do %>
+                <div><%= image_tag 'img_tokyo.jpeg', class: 'content_item' %></div>
+                <div class = "content_name">--------東京--------</div>
+            <% end %>
+            </div>
     </div>
+    <div></div>
+    
 </div>

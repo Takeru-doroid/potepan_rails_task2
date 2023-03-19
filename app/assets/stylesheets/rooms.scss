@@ -28,6 +28,11 @@
     padding-bottom: 2px;
 }
 
+.room_image{
+    width: 270px;
+    height: 180px;
+}
+
 
 /* room#index-------------------------- */
 
@@ -97,6 +102,18 @@
     padding: 10px;
 }
 
+.room_image_show{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.room_image_show img{
+    width: auto;
+    height: 737px;
+}
+
 .room_name-show{
     font-weight: bold;
 }
@@ -131,3 +148,41 @@
 }
 
 /* room#show-------------------------- */
+
+/* myroom#index-------------------------- */
+
+.myroom-content{
+    display: flex;
+    margin-bottom: 5px;
+    padding:5px;
+    border: 2px solid black;
+}
+
+.myroom-items{
+    display: flex;
+    justify-content: space-between;
+    height: 50%;
+}
+
+.myroom-item{
+    width: 33%;
+    margin: 0 auto;
+    line-height: 90px;
+}
+
+.myroom-body{
+    width: 100%;
+    margin: 0 auto;
+    line-height: 90px;
+    border-top: 1px solid gray;
+}
+
+.myroom-column{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 5px;
+    border: 1px solid gray;
+}
+
+/* myroom#index-------------------------- */

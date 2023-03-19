@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  
+
   def index
     @reservations = Reservation.all
     reservations = @reservations
@@ -10,17 +10,31 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
   end
   
-  def create
-    #@reservation = current_user.reservations.create(reservation_params)
+  def new
+    @room_info = Room.find(params[:room_id])
+    @reservation = @room_info.reservations.new
+  end
+  
+  def confirm
     @reservation = Reservation.new(reservation_params)
-    @reservation.user_id = current_user.id
-    @reservation.save
+    @room_info = Room.find(params[:reservation][:room_id])
+    @total_price = @reservation.total_price(@room_info)
+  end
+  
+  def create
+    @room_info = Room.find(params[:room_id])
+    @reservation = Reservation.new(reservation_params)
     
-    redirect_to root_path notice: "予約が完了しました"
+    if @reservation.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
   
   private
   def reservation_params
-    params.require(:reservation).permit(:start_date, :end_date, :room_id)
+    params.require(:reservation).permit(:start_date, :end_date, :person)
   end
+  
 end

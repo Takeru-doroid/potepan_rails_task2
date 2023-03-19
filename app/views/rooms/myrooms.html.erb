@@ -1,0 +1,23 @@
+
+<div class = "container">
+    
+    <% @myrooms.each do |myroom| %>
+    
+        <div class = "myroom-content">
+            <%= attachment_image_tag myroom, :image, size: "250x50", fallback: "area_no_image.png" %>
+            
+            <div class = "myroom-column">
+                <div class = "myroom-items">
+                    <div class = "myroom-item"><%= myroom.room_name %></div>
+                    <div class = "myroom-item"><%= myroom.address %></div>
+                    <div class = "myroom-item"><%= myroom.price %>円/日</div>
+                </div>
+                <div class = "myroom-body"><%= myroom.body %></div>
+            </div>
+            
+        </div>
+        
+    <% end %>
+
+</div>
+

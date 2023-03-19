@@ -1,0 +1,38 @@
+
+<div>
+    確認画面<br>
+</div>
+
+<div>
+    チェックイン日<br>
+    <%= @reservation.start_date %>
+</div>
+<div>
+    チェックアウト日<br>
+    <%= @reservation.end_date %>
+</div>
+<div>
+    宿泊日数<br>
+    <%= @reservation.stay_days %>
+</div>
+<div>
+    人数<br>
+    <%= @reservation.person %>
+</div>
+<div>
+    宿泊金額(一日一人当たり)<br>
+    <%= @room_info.price %>
+</div>
+<div>
+    支払い金額<br>
+    <%= @total_price %>
+</div>
+
+<%= form_with(model: [@room_info, @reservation], url: room_reservations_path(@room_info)) do |f| %>
+    <div>
+        <%= f.hidden_field :start_date %>
+        <%= f.hidden_field :end_date %>
+        <%= f.hidden_field :person %>
+        <%= f.submit "確定する" %>
+    </div>
+<% end %>

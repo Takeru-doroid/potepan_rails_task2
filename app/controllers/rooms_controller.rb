@@ -1,6 +1,13 @@
 class RoomsController < ApplicationController
+  
   def index
     @rooms = Room.all
+  end
+  
+  def myrooms
+    @rooms = Room.all
+    rooms = @rooms
+    @myrooms = current_user.rooms
   end
   
   def show
@@ -17,7 +24,7 @@ class RoomsController < ApplicationController
     @room.save
     redirect_to room_path(@room)
   end
-
+  
   def edit
     @room = Room.find(params[:id])
   end
@@ -32,7 +39,7 @@ class RoomsController < ApplicationController
     redirect_to root_path if params[:keyword] == ""
     
     @rooms = Room.search(params[:freeword])
-
+    
     @freeword = params[:freeword]
     render "index"
   end

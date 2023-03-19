@@ -29,3 +29,62 @@
 
 /* reservations_index-------------------------- */
 
+/* reservations_new-------------------------- */
+.rev-new-container{
+    padding-bottom: 36px;
+    display: flex;
+    margin: 10px;
+}
+
+.rev-new-info{
+    width: 75%;
+    padding: 10px;
+}
+
+.rev-image-new{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.rev-image-new img{
+    width: auto;
+    height: 737px;
+}
+
+.rev-name-new{
+    font-weight: bold;
+}
+
+.rev-new-reservate{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #EEEEEE;
+    padding: 10px;
+}
+
+.rev-new-row{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 10px 0px;
+}
+
+.rev-reserve-btn{
+    margin-top: 15px;
+    width: 70%;
+    height: 40px;
+    border: none;
+    background-color: #75A9FF;
+    border-radius: 10px;
+    color: white;
+}
+
+.rev-reserve-btn:hover{
+    color: black;
+}
+
+
+/* reservations_new-------------------------- */
