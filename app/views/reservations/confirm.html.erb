@@ -25,7 +25,7 @@
 </div>
 <div>
     支払い金額<br>
-    <%= @total_price %>
+    <%= @reservation.total_price %>
 </div>
 
 <%= form_with(model: [@room_info, @reservation], url: room_reservations_path(@room_info)) do |f| %>

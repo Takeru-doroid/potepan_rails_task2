@@ -16,14 +16,14 @@ class ReservationsController < ApplicationController
   end
   
   def confirm
-    @reservation = Reservation.new(reservation_params)
-    @room_info = Room.find(params[:reservation][:room_id])
-    @total_price = @reservation.total_price(@room_info)
+    @room_info = Room.find(params[:room_id])
+    @reservation = @room_info.reservations.new(reservation_params)
+    @reservation.room_id = @room_info.id
   end
   
   def create
     @room_info = Room.find(params[:room_id])
-    @reservation = Reservation.new(reservation_params)
+    @reservation = @room_info.reservations.new(reservation_params)
     
     if @reservation.save
       redirect_to root_path
