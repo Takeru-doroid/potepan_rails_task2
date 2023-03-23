@@ -68,3 +68,7 @@ gem "bulma-rails"
 
 gem 'jquery-rails'
 gem 'ransack'
+
+gem 'awesome_rails_console'
+
+gem 'pry-rails'

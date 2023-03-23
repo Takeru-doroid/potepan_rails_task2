@@ -1,38 +1,49 @@
 
-<div>
-    確認画面<br>
-</div>
-
-<div>
-    チェックイン日<br>
-    <%= @reservation.start_date %>
-</div>
-<div>
-    チェックアウト日<br>
-    <%= @reservation.end_date %>
-</div>
-<div>
-    宿泊日数<br>
-    <%= @reservation.stay_days %>
-</div>
-<div>
-    人数<br>
-    <%= @reservation.person %>
-</div>
-<div>
-    宿泊金額(一日一人当たり)<br>
-    <%= @room_info.price %>
-</div>
-<div>
-    支払い金額<br>
-    <%= @reservation.total_price %>
-</div>
-
-<%= form_with(model: [@room_info, @reservation], url: room_reservations_path(@room_info)) do |f| %>
-    <div>
-        <%= f.hidden_field :start_date %>
-        <%= f.hidden_field :end_date %>
-        <%= f.hidden_field :person %>
-        <%= f.submit "確定する" %>
+<div class = "container">
+    <div class = "reservation_confirm_title">
+        確認画面
     </div>
-<% end %>
+    
+    <div class = "reservation_confirm_table">
+        
+        <div class = "confirm_tr">
+            <div>チェックイン日</div>
+            <div class = "confirm_tag"><%= @reservation.start_date %></div>
+        </div>
+        
+        <div class = "confirm_tr">
+            <div>チェックアウト日</div>
+            <div class = "confirm_tag"><%= @reservation.end_date %></div>
+        </div>
+        
+        <div class = "confirm_tr">
+            <div>宿泊日数</div>
+            <div class = "confirm_tag"><%= @reservation.stay_days %></div>
+        </div>
+        
+        <div class = "confirm_tr">
+            <div>人数</div>
+            <div class = "confirm_tag"><%= @reservation.person %></div>
+        </div>
+        
+        <div class = "confirm_tr">
+            <div>宿泊金額(一日一人当たり)</div>
+            <div class = "confirm_tag"><%= @room_info.price %></div>
+        </div>
+        
+        <div class = "confirm_tr">
+            <div>支払い金額</div>
+            <div class = "confirm_tag"><%= @reservation.total_price %></div>
+        </div>
+
+    </div>
+    
+    <%= form_with(model: [@room_info, @reservation], url: room_reservations_path(@room_info)) do |f| %>
+        <div>
+            <%= f.hidden_field :start_date %>
+            <%= f.hidden_field :end_date %>
+            <%= f.hidden_field :person %>
+            <%= f.submit "確定する" %>
+        </div>
+    <% end %>
+</div>
