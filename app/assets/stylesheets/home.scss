@@ -13,7 +13,7 @@
 /* header, footer-------------------------- */
 header{
     width: 100%;
-    height: 74px;
+    height: 90px;
     background-color: black;
 }
 
@@ -68,6 +68,13 @@ footer{
     position: absolute;
     transition: all 0.3s;
     cursor: pointer;
+}
+
+.current_user_username{
+    position: absolute;
+    cursor: pointer;
+    color: white;
+    margin-top: 35px;
 }
 
 .accordion-content{
