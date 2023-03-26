@@ -24,10 +24,11 @@
         
         <% if user_signed_in? %>
           <div class = "accordion-container">
+            
+            <div class = "current_user_username"><%= current_user.username %></div>
             <div class = "accordion-title">
               <%= attachment_image_tag current_user, :profile_image, fallback: "no_image.jpeg", class: "no_image" %><br>
             </div>
-            <div class = "current_user_username"><%= current_user.username %></div>
             <div class = "accordion-content">
               <div class = "accordion-list">
                 <%= link_to "アカウント設定", edit_user_path(current_user), class: "accordion_link" %>
