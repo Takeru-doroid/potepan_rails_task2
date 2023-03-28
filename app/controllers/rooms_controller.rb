@@ -21,8 +21,13 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(room_params)
     @room.user_id = current_user.id
-    @room.save
-    redirect_to room_path(@room)
+
+    if @room.save
+      redirect_to room_path(@room)
+    else
+      puts @room.errors.full_messages
+      render :new
+    end
   end
   
   def edit

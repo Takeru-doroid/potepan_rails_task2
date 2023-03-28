@@ -1,6 +1,13 @@
 ---
 ja:
   activerecord:
+    attributes:
+      room:
+        room_name: "部屋名"
+        body: "部屋の紹介文"
+        price: "一泊あたりの宿泊金額"
+        address: "部屋の住所"
+        
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

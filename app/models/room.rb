@@ -3,15 +3,10 @@ class Room < ApplicationRecord
     attachment :image
     has_many :reservations, dependent: :destroy
     
-    with_options presence: true do
-        
-        validates :room_name
-        validates :body
-        validates :price
-        validates :address
-        validates :image
-        
-    end
+    validates :room_name, presence: true
+    validates :body, presence: true
+    validates :price, presence: true
+    validates :address, presence: true
     
     def self.search(freeword)
         where(["room_name like? OR body like? OR address like?", "%#{freeword}%", "%#{freeword}%", "%#{freeword}%"])

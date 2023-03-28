@@ -72,3 +72,5 @@ gem 'ransack'
 gem 'awesome_rails_console'
 
 gem 'pry-rails'
+
+gem 'rails-i18n'
