@@ -8,11 +8,15 @@
             
             <div class = "myroom-column">
                 <div class = "myroom-items">
-                    <div class = "myroom-item"><%= myroom.room_name %></div>
-                    <div class = "myroom-item"><%= myroom.address %></div>
-                    <div class = "myroom-item"><%= myroom.price %>円/日</div>
+                    <div class = "myroom-item">部屋名：
+                        <%= link_to "#{myroom.room_name}", room_path(myroom) %>
+                    </div>
+                    <div class = "myroom-item">紹介文：<%= myroom.body %></div>
+                    <div class = "myroom-item">宿泊料金：<%= myroom.price %>円(/日)</div>
                 </div>
-                <div class = "myroom-body"><%= myroom.body %></div>
+                <div class = "created_at">
+                    作成日：<%= l myroom.created_at %><br><%= l myroom.created_at, format: :short %>
+                </div>
             </div>
             
         </div>

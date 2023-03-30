@@ -8,13 +8,17 @@
     <% @rooms.each do |room| %>
         <div class = "rooms-container">
             <ul>
+                <li class = "list"><%= attachment_image_tag room, :image, class: "room_image", fallback: "default_room_image.png",  size: "270x180" %></li>
                 <%= link_to(new_room_reservation_path(room)) do %>
-                    <li class = "list"><%= attachment_image_tag room, :image, class: "room_image", fallback: "default_room_image.png",  size: "270x180" %></li>
                     <li class = "list"><%= room.room_name.truncate(15) %></li>
                 <% end %>
-                <li class = "list"><%= room.address.truncate(15) %></li>
                 <li class = "list"><%= room.body.truncate(15) %></li>
+                <li class = "list"><%= room.address.truncate(15) %></li>
                 <li class = "list">¥<%= room.price %>/日</li>
+                <li class = "list created_at">
+                    作成日:<%= l room.created_at %><br>
+                    <%= l room.created_at, format: :short %>
+                </li>
             </ul>
         </div>
     <% end %>

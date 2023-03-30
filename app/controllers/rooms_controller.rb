@@ -25,7 +25,6 @@ class RoomsController < ApplicationController
     if @room.save
       redirect_to room_path(@room)
     else
-      puts @room.errors.full_messages
       render :new
     end
   end
