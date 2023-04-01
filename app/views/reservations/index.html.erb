@@ -3,6 +3,27 @@
     
     <div class = "reservation_index_table">
         <div class = "reserve-index-row">
+            <div class = "reserve-title">部屋名</div>
+            <% @myreservations.each do |myreservation| %>
+                <div class = "reserved-list"><%= myreservation.room.room_name %></div>
+            <% end %>
+        </div>
+        
+        <div class = "reserve-index-row">
+            <div class = "reserve-title">紹介文</div>
+            <% @myreservations.each do |myreservation| %>
+                <div class = "reserved-list"><%= myreservation.room.body %></div>
+            <% end %>
+        </div>
+        
+        <div class = "reserve-index-row">
+            <div class = "reserve-title">合計料金</div>
+            <% @myreservations.each do |myreservation| %>
+                <div class = "reserved-list"><%= myreservation.total_price %></div>
+            <% end %>
+        </div>
+        
+        <div class = "reserve-index-row">
             <div class = "reserve-title">チェックイン日時</div>
             <% @myreservations.each do |myreservation| %>
                 <div class = "reserved-list"><%= myreservation.start_date %></div>
@@ -17,9 +38,12 @@
         </div>
         
         <div class = "reserve-index-row">
-            <div class = "reserve-title">部屋名</div>
+            <div class = "reserve-title">予約確定日時</div>
             <% @myreservations.each do |myreservation| %>
-                <div class = "reserved-list"><%= myreservation.room.room_name %></div>
+                <div class = "reserved-list">
+                    <%= l myreservation.created_at %>
+                    <%= l myreservation.created_at, format: :custom %>
+                    </div>
             <% end %>
         </div>
     </div>

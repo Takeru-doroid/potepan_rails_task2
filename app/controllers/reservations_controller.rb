@@ -21,6 +21,13 @@ class ReservationsController < ApplicationController
     @reservation = @room_info.reservations.new(reservation_params)
     @reservation.user_id = current_user.id
     @reservation.room_id = @room_info.id
+    
+    if @reservation.valid?
+      render :confirm
+    else
+      render :new
+    end
+    
   end
   
   def create

@@ -1,5 +1,16 @@
 <div class = "rev-new-container container">
     
+    <% if @reservation.errors.any? %>
+        <div id = "error_explanation">
+            <h2><%= pluralize(@reservation.errors.count, "つ") %>のエラーがあります。再度確認をお願いいたします。</h2>
+            <ul>
+                <% @reservation.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end%>
+            </ul>
+        </div>
+    <% end %>
+    
     <div class = "rev-new-info">
         <div class = "rev-image-new"><%= attachment_image_tag @room_info, :image, size: "988x737", fallback: "default_room_image.png" %></div>
         <div class = "rev-menu">

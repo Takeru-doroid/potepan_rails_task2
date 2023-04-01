@@ -8,6 +8,11 @@ ja:
         price: "一泊あたりの宿泊金額"
         address: "部屋の住所"
         
+      reservation:
+        start_date: "チェックイン日"
+        end_date: "チェックアウト日"
+        person: "人数"
+        
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -211,6 +216,7 @@ ja:
       default: "%Y年/%m月/%d日"
       long: "%Y/%m/%d %H:%M"
       short: "%H:%M:%S"
+      custom: "%H:%M"
     pm: 午後
     
   user:
@@ -219,7 +225,7 @@ ja:
     
     
   reservation:
-    start_date: "開始日"
-    end_date: "終了日"
+    start_date: "チェックイン日"
+    end_date: "チェックアウト日"
     person: "人数"
     
