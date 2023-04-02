@@ -1,52 +1,60 @@
 
 <div class = "container">
-    
-    <div class = "reservation_index_table">
-        <div class = "reserve-index-row">
-            <div class = "reserve-title">部屋名</div>
-            <% @myreservations.each do |myreservation| %>
-                <div class = "reserved-list"><%= myreservation.room.room_name %></div>
-            <% end %>
-        </div>
-        
-        <div class = "reserve-index-row">
-            <div class = "reserve-title">紹介文</div>
-            <% @myreservations.each do |myreservation| %>
-                <div class = "reserved-list"><%= myreservation.room.body %></div>
-            <% end %>
-        </div>
-        
-        <div class = "reserve-index-row">
-            <div class = "reserve-title">合計料金</div>
-            <% @myreservations.each do |myreservation| %>
-                <div class = "reserved-list"><%= myreservation.total_price %></div>
-            <% end %>
-        </div>
-        
-        <div class = "reserve-index-row">
-            <div class = "reserve-title">チェックイン日時</div>
-            <% @myreservations.each do |myreservation| %>
-                <div class = "reserved-list"><%= myreservation.start_date %></div>
-            <% end %>
-        </div>
-        
-        <div class = "reserve-index-row">
-            <div class = "reserve-title">チェックアウト日時</div>
-            <% @myreservations.each do |myreservation| %>
-                <div class = "reserved-list"><%= myreservation.end_date %></div>
-            <% end %>
-        </div>
-        
-        <div class = "reserve-index-row">
-            <div class = "reserve-title">予約確定日時</div>
-            <% @myreservations.each do |myreservation| %>
-                <div class = "reserved-list">
-                    <%= l myreservation.created_at %>
-                    <%= l myreservation.created_at, format: :custom %>
-                    </div>
-            <% end %>
-        </div>
-    </div>
+    <table class = "reserve-table">
+        <tbody class = "reserve-body">
+            <tr class = "reserve-row">
+                <th>部屋名</th>
+                <td class = "reserve-row">
+                    <% @myreservations.each do |myreservation| %>
+                        <li class = "reserve-row reserve-lists"><%= myreservation.room.room_name %></li>
+                    <% end %>
+                </td>
+            </tr>
+            <tr class = "reserve-row">
+                <th>紹介文</th>
+                <td class = "reserve-row">
+                    <% @myreservations.each do |myreservation| %>
+                        <li class = "reserve-row reserve-lists"><%= myreservation.room.body %></li>
+                    <% end %>
+                </td>
+            </tr>
+            <tr class = "reserve-row">
+                <th>合計料金</th>
+                <td class = "reserve-row">
+                    <% @myreservations.each do |myreservation| %>
+                        <li class = "reserve-row reserve-lists"><%= myreservation.total_price %></li>
+                    <% end %>
+                </td>
+            </tr>
+            <tr class = "reserve-row">
+                <th>チェックイン日時</th>
+                <td class = "reserve-row">
+                    <% @myreservations.each do |myreservation| %>
+                        <li class = "reserve-row reserve-lists"><%= myreservation.start_date %></li>
+                    <% end %>
+                </td>
+            </tr>
+            <tr class = "reserve-row">
+                <th>チェックアウト日時</th>
+                <td class = "reserve-row">
+                    <% @myreservations.each do |myreservation| %>
+                        <li class = "reserve-row reserve-lists"><%= myreservation.end_date %></li>
+                    <% end %>
+                </td>
+            </tr>
+            <tr class = "reserve-row">
+                <th>予約確定日時</th>
+                <td class = "reserve-row">
+                    <% @myreservations.each do |myreservation| %>
+                        <li class = "reserve-row reserve-lists">
+                            <%= l myreservation.created_at %>
+                            <%= l myreservation.created_at, format: :custom %>
+                        </li>
+                    <% end %>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     
 </div>
 

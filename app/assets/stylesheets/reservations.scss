@@ -4,29 +4,24 @@
 
 /* reservations_index-------------------------- */
 
-.reservation_index_table{
+.reserve-table{
     width: 100%;
     margin: auto;
+}
+
+.reserve-body{
     display: flex;
     justify-content: space-between;
 }
 
-.reserve-index-row{
-    width: 100%;
+.reserve-row{
+    display: flex;
+    flex-direction: column;
 }
 
-.reserve-title{
-    font-family: bold;
-    font-size: 20px;
+.reserve-lists{
+    margin-top: 5px;
 }
-
-.reserved-list{
-    padding: 5px 0px;
-    margin: 5px 0px;
-    border-top: 2px solid gray;
-}
-
-
 /* reservations_index-------------------------- */
 
 /* reservations_new-------------------------- */
