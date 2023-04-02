@@ -1,14 +1,12 @@
 <div class = "container">
     <h2>ルーム詳細</h2>
     <div class = "room-show-container container">
+        <div class = "room_image_show"><%= attachment_image_tag @room, :image, size: "988x737", fallback: "default_room_image.png" %></div>
         <div class = "room-show-info">
-            <div class = "room_image_show"><%= attachment_image_tag @room, :image, size: "988x737", fallback: "default_room_image.png" %></div>
-            <div class = "room_name-show"><%= @room.room_name %></div>
-            <div class = "address-show"><%= @room.address %></div>
-            <div class = "body-show"><%= @room.body %></div>
+            <div class = "border-around room_name-show">部屋名<br><%= @room.room_name %></div>
+            <div class = "border-around address-show">住所<br><%= @room.address %></div>
+            <div class = "border-around body-show">紹介文<br><%= @room.body %></div>
+            <div><%=link_to "戻る", :back %></div>
         </div>
-        <ul>
-            <li><%=link_to "戻る", :back %></li>
-        </ul>
     </div>
 </div>

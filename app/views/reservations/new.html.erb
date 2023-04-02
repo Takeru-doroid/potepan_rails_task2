@@ -1,4 +1,4 @@
-<div class = "rev-new-container container">
+<div class = "container">
     
     <% if @reservation.errors.any? %>
         <div id = "error_explanation">
@@ -11,47 +11,50 @@
         </div>
     <% end %>
     
-    <div class = "rev-new-info">
-        <div class = "rev-image-new"><%= attachment_image_tag @room_info, :image, size: "988x737", fallback: "default_room_image.png" %></div>
-        <div class = "rev-menu">
-            <div class = "rev-name-new jsc_srt">部屋名：<%= @room_info.room_name %></div>
-            <div class = "rev-address-new jsc_srt">住所：<%= @room_info.address %></div>
-            <div class = "rev-body-new jsc_srt">紹介文：<%= @room_info.body %></div>
+    <div class = "rev-new-container">
+        <div class = "rev-new-info">
+            <div class = "rev-image-new"><%= attachment_image_tag @room_info, :image, size: "988x737", fallback: "default_room_image.png" %></div>
+            <div class = "rev-menu">
+                <div class = "rev-name-new jsc_srt">部屋名：<%= @room_info.room_name %></div>
+                <div class = "rev-address-new jsc_srt">住所：<%= @room_info.address %></div>
+                <div class = "rev-body-new jsc_srt">紹介文：<%= @room_info.body %></div>
+            </div>
+        </div>
+        
+        <div class = "rev-new-reservate">
+            
+            <div>
+                <span>¥</span>
+                <%= @room_info.price %>
+                <span>/ 日</span>
+            </div>
+            
+            <%= form_with(model: [@room_info, @reservation], url: confirm_room_reservations_path(@room_info), local: true) do |f| %>
+                <%= f.hidden_field :room_id, value: @room %>
+                
+                <div class = "rev-new-row">
+                    <%= f.label "開始日" %>
+                    <%= f.date_field :start_date %>
+                </div>
+                
+                <div class = "rev-new-row">
+                    <%= f.label "終了日" %>
+                    <%= f.date_field :end_date %>
+                </div>
+                
+                <div class = "rev-new-row">
+                    <%= f.label "人数" %>
+                    <%= f.number_field :person, in: 1..100 %>
+                </div>
+                
+                <ul>
+                    <li><%= f.submit "この日程で予約する", class: "rev-reserve-btn" %></li>
+                </ul>
+                
+            <% end %>
+            
         </div>
     </div>
     
-    <div class = "rev-new-reservate">
-        
-        <div>
-            <span>¥</span>
-            <%= @room_info.price %>
-            <span>/ 日</span>
-        </div>
-        
-        <%= form_with(model: [@room_info, @reservation], url: confirm_room_reservations_path(@room_info), local: true) do |f| %>
-            <%= f.hidden_field :room_id, value: @room %>
-            
-            <div class = "rev-new-row">
-                <%= f.label "開始日" %>
-                <%= f.date_field :start_date %>
-            </div>
-            
-            <div class = "rev-new-row">
-                <%= f.label "終了日" %>
-                <%= f.date_field :end_date %>
-            </div>
-            
-            <div class = "rev-new-row">
-                <%= f.label "人数" %>
-                <%= f.number_field :person, in: 1..100 %>
-            </div>
-            
-            <ul>
-                <li><%= f.submit "この日程で予約する", class: "rev-reserve-btn" %></li>
-            </ul>
-            
-        <% end %>
-        
-    </div>
     
 </div>

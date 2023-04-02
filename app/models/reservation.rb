@@ -9,7 +9,7 @@ class Reservation < ApplicationRecord
   validate :end_date_after_start_date
   
   def end_date_after_start_date
-    if end_date.present? && end_date < start_date
+    if end_date.present? && start_date.present? && end_date < start_date
       errors.add(:end_date, "はチェックイン日よりも後に設定してください。")
     end
   end
