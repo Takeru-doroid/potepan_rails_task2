@@ -1,0 +1,23 @@
+<div class = "rooms-top-container">
+    
+    <div>
+        <th>検索結果数：</th>
+        <td><%= @rooms.count %></td>
+    </div>
+    
+    <% @rooms.each do |room| %>
+        <div class = "rooms-container">
+            <ul>
+                <li class = "list"><%= attachment_image_tag room, :image, class: "room_image", fallback: "default_room_image.png",  size: "270x180" %></li>
+                <%= link_to(new_room_reservation_path(room)) do %>
+                    <li class = "list"><%= room.room_name.truncate(15) %></li>
+                <% end %>
+                <li class = "list"><%= room.body.truncate(15) %></li>
+                <li class = "list"><%= room.address.truncate(15) %></li>
+                <li class = "list">¥<%= room.price %>/日</li>
+            </ul>
+        </div>
+    <% end %>
+    
+    
+</div>

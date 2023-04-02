@@ -1,0 +1,29 @@
+
+<div class = "container">
+    
+    <% @myrooms.each do |myroom| %>
+    
+        <div class = "myroom-content">
+            <%= attachment_image_tag myroom, :image, size: "250x50", fallback: "default_room_image.png" %>
+            
+            <div class = "myroom-column">
+                <div class = "myroom-items">
+                    <div class = "myroom-item">部屋名：
+                        <%= link_to "#{myroom.room_name}", room_path(myroom) %>
+                    </div>
+                    <div class = "myroom-item">宿泊料金：<%= myroom.price %>円(/日)</div>
+                </div>
+                <div class = "myroom-items">
+                    <div class = "myroom-item myroom_body">紹介文：<%= myroom.body %></div>
+                    <div class = "created_at myroom_created">
+                        作成日：<%= l myroom.created_at %><br><%= l myroom.created_at, format: :short %>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    <% end %>
+
+</div>
+

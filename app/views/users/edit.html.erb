@@ -1,0 +1,22 @@
+    <%= form_with model: @user do |f| %>
+        <div class = "edit_user_page container">
+            <div class = "edit_user_form_row">
+                <%= f.label :username, "ユーザー名", class: "edit_user_label" %>
+                <%= f.text_field :username, class: "edit_user_form" %>
+            </div>
+            <div class = "edit_user_form_row">
+                <%= f.label :email, "メールアドレス", class: "edit_user_label" %>
+                <%= f.email_field :email, class: "edit_user_form" %>
+            </div>
+            <div class = "edit_user_form_row">
+                <%= f.label :profile, "一言紹介", class: "edit_user_label" %>
+                <%= f.text_area :profile, class: "edit_user_form profile_form" %>
+            </div>
+            <div class = "edit_user_form_row">
+                <%= f.label :profile_image, "アカウント画像", class: "edit_user_label" %>
+                <%= f.attachment_field :profile_image, class: "edit_user_form" %>
+            </div>
+            <div><%= f.submit "更新" %></div>
+        </div>
+    <% end %>
+    

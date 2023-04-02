@@ -1,0 +1,52 @@
+<div class = "container">
+    <div class = "new_room_reservate_page">
+        <h2>ルーム登録</h2>
+        
+        <%= form_with(model: @room, local: true) do |f| %>
+            <% if @room.errors.any? %>
+                <div id = "error_explanation">
+                    <h2><%= pluralize(@room.errors.count, "つ") %>のエラーがあります。再度確認をお願いいたします。</h2>
+                    <ul>
+                        <% @room.errors.full_messages.each do |msg| %>
+                            <li><%= msg %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            <% end %>
+            <table class = "new_room_reservate_table">
+                <tr class = "reservate_row">
+                    <th><%= f.label :room_name, class: "reservate_label" %><div class = "required-icon">必須</div></th>
+                    <td><%= f.text_field :room_name, :placeholder => "ルーム名を入力", class: "reservate_field" %></td>
+                </tr>
+                    
+                <tr class = "reservate_row">
+                    <th><%= f.label :body, class: "reservate_label" %><div class = "required-icon">必須</div></th>
+                    <td><%= f.text_area :body, :placeholder => "ルーム説明を入力", class: "reservate_field" %></td>
+                </tr>
+                
+                <tr class = "reservate_row">
+                    <th><%= f.label :price, class: "reservate_label" %><div class = "required-icon">必須</div></th>
+                    <td><%= f.text_field :price, :placeholder => "一日あたりの料金を入力", class: "reservate_field" %></td>
+                </tr>
+                
+                <tr class = "reservate_row">
+                    <th><%= f.label :address, class: "reservate_label" %><div class = "required-icon">必須</div></th>
+                    <td><%= f.text_field :address, :placeholder => "住所を入力", class: "reservate_field" %></td>
+                </tr>
+                
+                <tr class = "reservate_row">
+                    <th><%= f.label :image, class: "reservate_label" %></th>
+                    <td><%= f.attachment_field :image, class: "reservate_field" %></td>
+                </tr>
+            </table>
+            
+            <%= f.hidden_field :user_id, value: current_user.id %>
+            
+            <ul>
+                <li><%= f.submit "登録する" %></li>
+            </ul>
+            
+        <% end %>
+    </div>
+</div>
+

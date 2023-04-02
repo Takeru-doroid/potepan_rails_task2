@@ -1,0 +1,121 @@
+// Place all the styles related to the reservations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* reservations_index-------------------------- */
+
+.reserve-table{
+    width: 100%;
+    margin: auto;
+}
+
+.reserve-body{
+    display: flex;
+    justify-content: space-between;
+}
+
+.reserve-row{
+    display: flex;
+    flex-direction: column;
+}
+
+.reserve-lists{
+    margin-top: 5px;
+}
+/* reservations_index-------------------------- */
+
+/* reservations_new-------------------------- */
+.rev-new-container{
+    padding-bottom: 36px;
+    display: flex;
+    margin: 10px;
+}
+
+.rev-new-info{
+    width: 75%;
+    padding: 10px;
+}
+
+.rev-image-new{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.rev-image-new img{
+    width: auto;
+    height: 737px;
+}
+
+.rev-menu{
+    width: 80%;
+    margin: auto;
+}
+
+.rev-name-new{
+    font-weight: bold;
+}
+
+.jsc_srt{
+    display: flex;
+}
+
+.rev-new-reservate{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #EEEEEE;
+    padding: 10px;
+}
+
+.rev-new-row{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 10px 0px;
+}
+
+.rev-reserve-btn{
+    margin-top: 15px;
+    width: 70%;
+    height: 40px;
+    border: none;
+    background-color: #75A9FF;
+    border-radius: 10px;
+    color: white;
+}
+
+.rev-reserve-btn:hover{
+    color: black;
+}
+
+/* reservations_new-------------------------- */
+
+/* reservations_confirm-------------------------- */
+
+.reservation_confirm_title{
+    font-size: 40px;
+    font-family: bold;
+    margin-bottom: 30px;
+}
+
+.reservation_confirm_table{
+    width: 100%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.confirm_tr{
+    display: flex;
+    flex-direction: column;
+}
+
+.confirm_tag{
+    padding-top: 20px;
+}
+
+/* reservations_confirm-------------------------- */
